@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	
+	
+<!--
+css code 
+-->
+
+
+
+		<style>
+			.form_area
+			{
+				//background-color: #e6ffff;
+				//border:.1px  blue;
+				border-style: outset;
+
+
+				height: 670px;
+				width: 350px;
+				position: absolute;
+				right: 100px;
+				bottom: 10px;
+
+			}
+			.form_inner_area
+			{
+				//border:1px solid;
+				height: 200px;
+				width: 250px;
+				position: absolute;
+				left: 50px;
+							
+			}
+			.img_all
+			{
+				position: absolute;
+				left:160px;
+				bottom: 100px;
+			}
+
+		</style>
+
+
+
+
+
+<!--
+validation code for registration
+-->
+
+		<script>
+		
+		function validation()
+		{
+			var flag=true;
+			
+			var x = document.forms["myForm"]["fn"].value;
+			if (x == null || x == "") {
+
+
+				flag=false;
+			}
+			
+			
+			x = document.forms["myForm"]["ln"].value;
+			if (x == null || x == "") {
+			flag=false;
+			}
+			
+			
+			
+			
+			var pass = document.getElementById("password").value;
+			var cpass = document.getElementById("cpassword").value;
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+
+			
+			
+
+			
+			
+			
+			var gender_validation=true;
+			
+			if(document.getElementById("gmale").checked) {
+				}
+				else if(document.getElementById('gfmale').checked) {
+					//Female radio button is checked
+				}
+				else if(document.getElementById('gomale').checked) {
+				
+				}
+				else
+				{
+					gender_validation=false;				
+				}
+				
+			
+		
+			
+			
+			if(flag==false)
+			{
+				alert("Input Invalid fill all area with valid information");
+				return false;
+			}
+			
+			
+			
+			x = document.forms["myForm"]["phone"].value;
+			
+			if(isNaN(x)||x.length==0)
+			{
+				alert("Invalid Phone");
+				return false;
+			}
+			
+			
+			
+			
+			var formEmail=document.forms["myForm"]["email"].value;
+			
+			var pattern = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+			
+			var email_valid=true;
+			if(formEmail==null||formEmail=="")
+			{
+				email_valid=false;
+			}
+			
+			if(pattern.test(formEmail))
+			{
+			
+			}
+			else
+			{
+			
+			email_valid=false;
+			}
+			
+			if(email_valid==false)
+			{
+				alert("Email Pattern invalid");
+				return false;
+			}
+			
+			
+			
+			
+			
+			if(pass!=cpass||pass.length==0||cpass.length==0)
+			{
+				alert(" Password Does not match or empty field . Try again");
+				return false;
+			}
+			
+			
+			if(gender_validation==false)
+			{
+				alert("Gender not selected");
+				return false;
+			}
+			
+			
+			
+			var dob = document.forms["myForm"]["dob"].value;
+			
+			if (dob == null || dob.length<2) {
+			alert("Date is Empty,Invalid");
+			return false;
+			}
+			
+			
+						
+		var em = document.forms["myForm"]["email"].value;
+			var atpos = em.indexOf("@");
+			var dotpos = em.lastIndexOf(".");
+			if (atpos<1 || dotpos<atpos+2 || dotpos+2>=em.length) {
+				alert("Not a valid e-mail address");
+				return false;
+			}
+
+
+			x = document.forms["myForm"]["address"].value;
+			if (x == null || x == "") {
+				alert("Empty Address Field");
+				return false;
+			}
+			
+			
+			
+			
+			
+			
+			
+		}
+		
+		
+		
+
+//onsubmit="return validation()" 
+
+		</script>
+
+
+	</head>
+
+	<body >
+	
+<!--
+html form registration code
+-->
+
+	<form name="myForm"   action="view.php" method="post">
+
+		<div class="form_area">
+			<div class="form_inner_area">
+
+				<br>
+				<br>
+
+				<strong>First name:</strong>
+				<br>
+				  <input type="text" name="fn" size="30" placeholder="First Name">
+				<br>
+				<br>
+				<strong>Last name:</strong>
+				<br>
+				  <input type="text" name="ln" size="30" placeholder="Last Name">
+				<br>
+				<br>
+				<strong>Email ID:</strong>
+				
+				<br>
+				  <input type="email"  placeholder="example@abc.com" name="email" size="30">
+				<br>
+				<br>
+				<strong>Password:</strong>
+
+				
+				<br>
+				  <input type="password" id="password" placeholder="Password" name="password" size="30">
+				<br>
+				<br>
+				<strong>Confirm Password:</strong>			
+				
+				<br>
+				  <input type="password" id="cpassword" placeholder="Confirm Password" name="cpassword"  size="30">
+				<br>
+
+				<br>
+				<strong>Phone:</strong>			
+
+				<br>
+
+				<input type="text" name="phone" id="pphone" placeholder="Phone" size="30">
+				</br>
+
+				<br>
+				<strong>Address:</strong>
+				<br>
+				  <input type="text" name="address" size="30" placeholder="Address">
+				<br>
+				
+				
+				
+				
+				<br>
+				<strong>Date Of Birth:</strong>			
+				
+				<br>
+				  <input type="date" name="dob">
+				<br>
+				
+				
+
+				<br>
+				<strong>Gender :</strong>			
+				   <div>
+						<input type="radio" name="gender" id="gmale" value="male"> Male
+						<br>
+						<input type="radio" name="gender" id="gfmale" value="female"> Female
+						<br>
+						<input type="radio" name="gender" id="gomale" value="other"> Other
+					</div>
+				<br>
+
+				<button type="submit" value="Submit" style="position: absolute; right:-10px; background-color: #99ffff;><strong "><b>Submit</b></strong></button>
+			</div>
+		</div>
+	</form>
+	<p style="font-family:sans-serif; color:#ff33ff; font-size:40px; text-align:center; ">Register Yourself</p>
+
+	<div class="img_all">
+		
+		<p style="font-style: oblique; font-size:25px; text-align:center; color:#84e1e1;">Take it all with you</p>
+
+<br>
+
+
+		<img src="https://restaurantfinderapp.files.wordpress.com/2013/02/cropped-restaurant_finder_1024_banner1.png" height="300px" width="700px">
+
+		
+	</div>
+	</body>
+</html>

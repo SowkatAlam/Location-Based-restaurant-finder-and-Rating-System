@@ -1,0 +1,3 @@
+RewriteEngine On
+
+RewriteRule ^restaurant/([^/]+)/?$ restaurant.php?id=$1 [NC,L]

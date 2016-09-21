@@ -1,0 +1,75 @@
+.search_list
+{
+
+	position: absolute;
+	left: 30%;
+	top: 27%;
+
+	width: 65%;
+	
+	border:1px solid;
+border-color: #e6b3ff;
+	
+}
+
+
+.search_item
+{
+	/*
+	position: absolute;
+	left: 10%;
+	top: 50%;
+	*/
+	width: 96%;
+	height: 160px;
+	
+	margin: 2%;
+}
+.search_item_logo
+{
+	
+	width: 25%;
+	background-color: #f1f1f1;
+	float: left;
+}
+.search_item_name
+{
+	position: absolute;
+	left: 30%;	
+	
+}
+
+.search_box
+		{
+			position: absolute;
+			height: 10%;
+    		width: 100%;
+
+    		
+    		top: 70px;
+    		/*color: powderblue;*/
+    		background-color: white;
+    		font-family: 'Open Sans', sans-serif;
+    		position: fixed;
+    		z-index: 1;
+    		
+    		padding-left: 30%;
+    		padding-top: 2%;
+    		border: 1px solid;
+
+    		border-color: #e6b3ff;
+	 box-shadow: 1px 1px 1px #888888;
+		}
+
+
+.search {
+		                padding:12px 35px;
+		                /*background:rgba(50, 50, 50, 0.3);
+		                */
+		                background:rgba(255, 255, 255, 0.2);
+		                border:1px solid #dbdbdb;
+
+		                
+		              font-size: 15px;
+		             	
+		}

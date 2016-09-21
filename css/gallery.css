@@ -1,0 +1,30 @@
+.container
+{
+	position: absolute;
+	
+	top: 25%;
+	max-width: 100%;
+	padding-top: 5px;
+	padding-left: 10px;
+
+	background:#f0f0f0;
+	margin: 0 auto;
+}
+.gallery
+{
+	width: 100%;
+}
+.gallery-item
+{
+	float: left;
+	background:#fff;
+	width: 42%;
+	margin: 1%;
+	padding:2%;
+	
+
+}
+.gallery-item img
+{
+	width: 100%;
+}
